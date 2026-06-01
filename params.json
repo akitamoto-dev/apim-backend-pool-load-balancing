@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apimSku": { "value": "Basicv2" },
+    "aiServicesConfig": {
+      "value": [
+        { "name": "foundry1", "location": "japaneast", "priority": 1 },
+        { "name": "foundry2", "location": "swedencentral", "priority": 2, "weight": 50 },
+        { "name": "foundry3", "location": "eastus2", "priority": 2, "weight": 50 },
+        { "name": "foundry4", "location": "uksouth", "priority": 3 }
+      ]
+    },
+    "modelsConfig": {
+      "value": [
+        { "name": "gpt-4.1-mini", "publisher": "OpenAI", "version": "2025-04-14", "sku": "GlobalStandard", "capacity": 5 }
+      ]
+    },
+    "apimSubscriptionsConfig": {
+      "value": [
+        { "name": "subscription1", "displayName": "Subscription 1" }
+      ]
+    },
+    "inferenceAPIPath": { "value": "inference" },
+    "inferenceAPIType": { "value": "AzureOpenAI" },
+    "foundryProjectName": { "value": "backend-pool-load-balancing" }
+  }
+}
